@@ -18,27 +18,25 @@ public class NumberWizard : MonoBehaviour
         narrator.suggest();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void onBiggerClick ()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            narrator.highter();
-            narrator.currentState();
-            narrator.suggest();
+        narrator.highter();
+        narrator.currentState();
+        narrator.suggest();
+    }
 
-        } else if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            narrator.lower();
-            narrator.currentState();
-            narrator.suggest();
+    public void onLowerClick()
+    {
+        narrator.lower();
+        narrator.currentState();
+        narrator.suggest();
+    }
 
-        } else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            narrator.correct();
-            numberPicker = new NumberPicker(0, 1000);
-            narrator = new Narrator("... ah, you again!", numberPicker);
-            narrator.greet();
-        }
+    public void onCorrectClick()
+    {
+        narrator.correct();
+        numberPicker = new NumberPicker(0, 1000);
+        narrator = new Narrator("... ah, you again!", numberPicker);
+        narrator.greet();
     }
 }
