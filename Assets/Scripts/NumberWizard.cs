@@ -1,42 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NumberWizard : MonoBehaviour
 {
     private NumberPicker numberPicker;
     private Narrator narrator;
-
+    [SerializeField] Text currentSuggestion;
     // Start is called before the first frame update
-    void Start()
+    void initialize()
     {
         numberPicker = new NumberPicker(0, 1000);
         narrator = new Narrator("John", numberPicker);
+    }
 
-        narrator.greet();
-        narrator.currentState();
-        narrator.suggest();
+    void Start()
+    {
+        this.initialize();
+        this.updateSuggestField();
     }
 
     public void onBiggerClick ()
     {
-        narrator.highter();
-        narrator.currentState();
-        narrator.suggest();
+        numberPicker.highter();
+        this.updateSuggestField();
     }
 
     public void onLowerClick()
     {
-        narrator.lower();
-        narrator.currentState();
-        narrator.suggest();
+        numberPicker.lower();
+        this.updateSuggestField();
     }
 
-    public void onCorrectClick()
+    public void updateSuggestField()
     {
-        narrator.correct();
-        numberPicker = new NumberPicker(0, 1000);
-        narrator = new Narrator("... ah, you again!", numberPicker);
-        narrator.greet();
+        currentSuggestion.text = numberPicker.suggest().ToString();
     }
 }

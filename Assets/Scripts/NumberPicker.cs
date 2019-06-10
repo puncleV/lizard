@@ -3,8 +3,8 @@ using System.Collections;
 
 public class NumberPicker
 {
-    private int _min;
-    private int _max;
+    [SerializeField] int _min;
+    [SerializeField] int _max;
 
     public NumberPicker (int min, int max)
     {
