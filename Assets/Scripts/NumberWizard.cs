@@ -6,13 +6,11 @@ using UnityEngine.UI;
 public class NumberWizard : MonoBehaviour
 {
     private NumberPicker numberPicker;
-    private Narrator narrator;
     [SerializeField] Text currentSuggestion;
     // Start is called before the first frame update
     void initialize()
     {
         numberPicker = new NumberPicker(0, 1000);
-        narrator = new Narrator("John", numberPicker);
     }
 
     void Start()
