@@ -1110,6 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSuggestion: {fileID: 1364640776}
+  sceneLoader: {fileID: 1811312087}
 --- !u!4 &1038712625
 Transform:
   m_ObjectHideFlags: 0

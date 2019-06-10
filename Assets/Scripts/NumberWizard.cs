@@ -7,10 +7,11 @@ public class NumberWizard : MonoBehaviour
 {
     private NumberPicker numberPicker;
     [SerializeField] Text currentSuggestion;
+    [SerializeField] SceneLoader sceneLoader;
     // Start is called before the first frame update
     void initialize()
     {
-        numberPicker = new NumberPicker(0, 1000);
+        numberPicker = new NumberPicker();
     }
 
     void Start()
@@ -33,6 +34,13 @@ public class NumberWizard : MonoBehaviour
 
     public void updateSuggestField()
     {
-        currentSuggestion.text = numberPicker.suggest().ToString();
+        string newSuggestion = numberPicker.suggest().ToString();
+
+        if(newSuggestion.Equals(currentSuggestion.text))
+        {
+            sceneLoader.failScreen();
+        }
+
+        currentSuggestion.text = newSuggestion;
     }
 }

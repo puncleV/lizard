@@ -16,4 +16,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void failScreen()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
