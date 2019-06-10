@@ -31,13 +31,13 @@ public class NumberPicker
     public void lower ()
     {
         int suggestion = this.suggest();
-        _max = suggestion;
+        _max = suggestion - 1;
     }
 
     public void highter()
     {
         int suggestion = this.suggest();
-        _min = suggestion;
+        _min = suggestion + 1;
     }
 
     public int getMin()
