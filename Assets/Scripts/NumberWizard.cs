@@ -11,7 +11,7 @@ public class NumberWizard : MonoBehaviour
     // Start is called before the first frame update
     void initialize()
     {
-        numberPicker = new NumberPicker();
+        numberPicker = new NumberPicker(0, 228);
     }
 
     void Start()
